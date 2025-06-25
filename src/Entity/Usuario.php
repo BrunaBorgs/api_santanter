@@ -16,7 +16,7 @@ class Usuario
     #[ORM\Column(length: 255)]
     private ?string $nome = null;
 
-    #[ORM\Column(length: 11)]
+    #[ORM\Column(length: 11, unique: true)]
     private ?string $cpf = null;
 
     #[ORM\Column(length: 11)]
