@@ -43,7 +43,7 @@ class UsuarioDto
         return $this;
     }
 
-public function getSenha()
+    public function getSenha()
     {
         return $this->senha;
     }
