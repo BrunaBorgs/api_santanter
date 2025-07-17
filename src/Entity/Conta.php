@@ -14,7 +14,7 @@ class Conta
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column (type: Types::BIGINT)]
+    #[ORM\Column(type: Types::BIGINT)]
     private ?int $numero = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 12, scale: 2)]

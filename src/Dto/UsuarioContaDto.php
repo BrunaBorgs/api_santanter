@@ -8,12 +8,9 @@ class UsuarioContaDto
     private ?string $cpf = null;
     private ?string $nome = null;
     private ?string $email = null;
-    private ?string $senha = null;
     private ?string $telefone = null;
     private ?string $numeroConta = null;
     private ?string $saldo = null;
-
-    
 
     /**
      * Get the value of id
@@ -76,18 +73,6 @@ class UsuarioContaDto
     }
 
     /**
-     * Set the value of email
-     *
-     * @return  self
-     */ 
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
      * Get the value of email
      */ 
     public function getEmail()
@@ -96,21 +81,13 @@ class UsuarioContaDto
     }
 
     /**
-     * Get the value of senha
-     */ 
-    public function getSenha()
-    {
-        return $this->senha;
-    }
-
-    /**
-     * Set the value of senha
+     * Set the value of email
      *
      * @return  self
      */ 
-    public function setSenha($senha)
+    public function setEmail($email)
     {
-        $this->senha = $senha;
+        $this->email = $email;
 
         return $this;
     }

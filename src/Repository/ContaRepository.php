@@ -16,19 +16,38 @@ class ContaRepository extends ServiceEntityRepository
         parent::__construct($registry, Conta::class);
     }
 
-        /**
-         * @return Conta Returns an array of Conta objects
-         */
-        public function findByUsuarioId($usuarioId): ?Conta
-        {
-            return $this->createQueryBuilder('c')
-                ->join('c.usuario', 'u')
-                ->where('u.id = :id')
-                ->setParameter('id', $usuarioId)
-                ->getQuery()
-                ->getOneOrNullResult()
-            ;
-        }
+    /**
+     * @return ?Conta
+     */
+    public function findByUsuarioId($usuarioId): ?Conta
+    {
+        return $this->createQueryBuilder('c')
+            ->join('c.usuario', 'u')
+            ->where('u.id = :id')
+            ->setParameter('id', $usuarioId)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+
+
+    /**
+     * @return Conta[]
+     */
+    public function findByFiltro(string $valor) {
+        $q = $this->createQueryBuilder('c');
+
+        return $q
+            ->join('c.usuario', 'u')
+            ->where($q->expr()->like('u.nome', ':valor'))
+            ->orWhere($q->expr()->like('u.email', ':valor'))
+            ->orWhere($q->expr()->like('u.cpf', ':valor'))
+            ->orWhere($q->expr()->like('u.telefone', ':valor'))
+            ->orWhere($q->expr()->like('c.numero', ':valor'))
+            ->setParameter('valor', "%$valor%")
+            ->getQuery()
+            ->getResult();
+    }
 
     //    public function findOneBySomeField($value): ?Conta
     //    {

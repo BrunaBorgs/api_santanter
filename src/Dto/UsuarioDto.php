@@ -10,17 +10,6 @@ class UsuarioDto
     private ?string $senha = null;
     private ?string $telefone = null;
 
-    public function getNome()
-    {
-        return $this->nome;
-    }
-
-    public function setNome($nome)
-    {
-        $this->nome = $nome;
-        return $this;
-    }
-
     public function getCpf()
     {
         return $this->cpf;
@@ -29,6 +18,17 @@ class UsuarioDto
     public function setCpf($cpf)
     {
         $this->cpf = $cpf;
+        return $this;
+    }
+
+    public function getNome()
+    {
+        return $this->nome;
+    }
+
+    public function setNome($nome)
+    {
+        $this->nome = $nome;
         return $this;
     }
 

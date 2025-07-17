@@ -16,6 +16,22 @@ class TransacaoRepository extends ServiceEntityRepository
         parent::__construct($registry, Transacao::class);
     }
 
+    /**
+     * 
+     * @return Transacao[] Returns an array of Transacao objects
+     */
+    public function findByContaOrigemOrContaDestino(int $idConta): array
+    {
+        return $this->createQueryBuilder('t')
+            ->where('t.contaOrigem = :id')
+            ->orWhere('t.contaDestino = :id')
+            ->setParameter('id', $idConta)
+            ->orderBy('t.dataHora', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     //    /**
     //     * @return Transacao[] Returns an array of Transacao objects
     //     */

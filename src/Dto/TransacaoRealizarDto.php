@@ -4,17 +4,14 @@ namespace App\Dto;
 
 class TransacaoRealizarDto
 {
+
     private ?string $idUsuarioOrigem = null;
     private ?string $idUsuarioDestino = null;
-    //private ?string $dataHora = null;
     private ?string $valor = null;
-
-    
-
 
     /**
      * Get the value of idUsuarioOrigem
-     */ 
+     */
     public function getIdUsuarioOrigem()
     {
         return $this->idUsuarioOrigem;
@@ -24,7 +21,7 @@ class TransacaoRealizarDto
      * Set the value of idUsuarioOrigem
      *
      * @return  self
-     */ 
+     */
     public function setIdUsuarioOrigem($idUsuarioOrigem)
     {
         $this->idUsuarioOrigem = $idUsuarioOrigem;
@@ -34,7 +31,7 @@ class TransacaoRealizarDto
 
     /**
      * Get the value of idUsuarioDestino
-     */ 
+     */
     public function getIdUsuarioDestino()
     {
         return $this->idUsuarioDestino;
@@ -44,7 +41,7 @@ class TransacaoRealizarDto
      * Set the value of idUsuarioDestino
      *
      * @return  self
-     */ 
+     */
     public function setIdUsuarioDestino($idUsuarioDestino)
     {
         $this->idUsuarioDestino = $idUsuarioDestino;
@@ -54,7 +51,7 @@ class TransacaoRealizarDto
 
     /**
      * Get the value of valor
-     */ 
+     */
     public function getValor()
     {
         return $this->valor;
@@ -64,7 +61,7 @@ class TransacaoRealizarDto
      * Set the value of valor
      *
      * @return  self
-     */ 
+     */
     public function setValor($valor)
     {
         $this->valor = $valor;
